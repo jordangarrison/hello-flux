@@ -1,0 +1,21 @@
+name: Deploy Team 1 Server
+
+on:
+  workflow_dispatch:
+
+permissions: write-all
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-go@v3.5.0
+        with:
+          go-version: '1.20'
+
+      - uses: ko-build/setup-ko@main
+      
+      - run: cd apps/team-1/server && ko build --preserve-import-paths --tags "${GITHUB_REF_NAME}-${GITHUB_SHA:0:7}-$(date +%s),latest"
