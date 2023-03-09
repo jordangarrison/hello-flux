@@ -1,0 +1,8 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: readme
+  namespace: default  # notice this is the wrong namespace
+data:
+  readme.txt: team-1 is cool!
