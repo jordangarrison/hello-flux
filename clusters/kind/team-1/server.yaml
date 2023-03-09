@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: server
+  namespace: team-1
+  labels:
+    app: server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: server
+  template:
+    metadata:
+      labels:
+        app: server
+    spec:
+      containers:
+      - name: server
+        image: ghcr.io/jordangarrison/hello-flux/github.com/jordangarrison/hello-flux/apps/team-1/server # {"": "team-1:server"}
+        ports:
+        - containerPort: 8080
