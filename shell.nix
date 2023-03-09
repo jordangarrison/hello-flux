@@ -12,7 +12,7 @@ mkShell {
     unstable.docker
     unstable.go_1_18
     unstable.go-task
-    fluxcd
+    unstable.fluxcd
   ];
 
   GITHUB_USERNAME = "jordangarrison";
