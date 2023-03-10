@@ -45,7 +45,7 @@ spec:
     namespace: team-1
   filterTags:
     pattern: '^main-[a-fA-F0-9]+-(?P<ts>.*)'
-    extract: ''
+    extract: '\$ts'
   policy:
     numerical:
       order: asc
